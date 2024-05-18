@@ -1,0 +1,25 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: bgd-route
+  namespace: openshift-gitops
+  labels:
+    app.kubernetes.io/component: server
+    app.kubernetes.io/managed-by: openshift-gitops
+    app.kubernetes.io/name: openshift-gitops-server
+    app.kubernetes.io/part-of: argocd
+spec:
+  to:
+    kind: Service
+    name: openshift-gitops-server
+  tls:
+    termination: passthrough
+    insecureEdgeTerminationPolicy: Redirect
+    certificate: ''
+    key: ''
+    caCertificate: ''
+    destinationCACertificate: ''
+  host: www.bgd.lab.net
+  port:
+    targetPort: https
+
