@@ -10,13 +10,6 @@ spec:
   to:
     kind: Service
     name: bgd
-  tls:
-    termination: passthrough
-    insecureEdgeTerminationPolicy: Redirect
-    certificate: ''
-    key: ''
-    caCertificate: ''
-    destinationCACertificate: ''
   host: www.bgd.lab.net
   port:
     targetPort: 8080
