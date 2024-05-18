@@ -10,7 +10,9 @@ spec:
   to:
     kind: Service
     name: bgd
+  tls: null
   host: www.bgd.lab.net
+  path: /
   port:
     targetPort: 8080
 
